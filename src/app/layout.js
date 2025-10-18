@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono, Lato } from "next/font/google";
 import "./globals.css";
+import { Providers } from "@/lib/Providers";
 
 const lato = Lato({
     variable: "--font-lato",
@@ -25,7 +26,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${lato.style} antialiased`}>{children}</body>
+            <body className={`${lato.style} antialiased`}>
+                <Providers>{children}</Providers>
+            </body>
         </html>
     );
 }
